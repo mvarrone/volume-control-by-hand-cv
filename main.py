@@ -9,7 +9,6 @@ from Colors import Color
 
 
 def window_is_closed(window_name) -> bool:
-
     # If the q key is pressed, terminate the while loop
     if cv2.waitKey(1) & 0xFF == ord("q"):
         return True
@@ -26,7 +25,6 @@ def window_is_closed(window_name) -> bool:
 
 
 def draw(img, volBar, volPer, volume, center_frame_w, colorVol) -> None:
-
     # Drawings
     cv2.rectangle(img, (50, 150), (85, 400), Color.BLUE, 1)
     cv2.rectangle(img, (50, int(volBar)), (85, 400), Color.BLUE, cv2.FILLED)
@@ -56,7 +54,6 @@ def draw(img, volBar, volPer, volume, center_frame_w, colorVol) -> None:
 
 
 def compute_fps(pTime, img):
-
     # Frame rate
     cTime = time.time()
     fps = 1 / (cTime - pTime)
@@ -75,7 +72,6 @@ def compute_fps(pTime, img):
 
 
 def process_data(area, img, fingers_dict, detector, volume):
-
     if 250 < area:
 
         # Find distance between two fingers
@@ -114,7 +110,6 @@ def process_data(area, img, fingers_dict, detector, volume):
 
 
 def main():
-
     index_cam, width_cam, height_cam, flipCode, window_name = load_variables(
         name="camera"
     )
@@ -141,7 +136,6 @@ def main():
     pTime = 0  # Used in compute_fps()
 
     while cap.isOpened():
-
         success, img = cap.read()
         if not success:
             print("Can't receive frame. Exiting ...")

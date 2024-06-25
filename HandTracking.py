@@ -13,7 +13,6 @@ from Colors import Color
 
 
 class HandDetector:
-
     def __init__(
         self,
         static_image_mode=False,
@@ -108,7 +107,6 @@ class HandDetector:
         return fingers
 
     def find_distance(self, finger1, finger2, img, draw=True):
-
         x1, y1 = self.lmList[finger1][1], self.lmList[finger1][2]
         x2, y2 = self.lmList[finger2][1], self.lmList[finger2][2]
         cx, cy = (x1 + x2) // 2, (y1 + y2) // 2

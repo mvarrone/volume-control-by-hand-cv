@@ -7,7 +7,6 @@ import numpy as np
 
 
 def load_variables(name):
-
     if name == "camera":
         index_cam = 0  # Built-in webcam index
         width_cam = 1280
